@@ -1,29 +1,44 @@
 import React from "react";
-import "./Dropdown.css";
-function Dropdown() {
+
+const Dropdown = (props) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [select, setSelect] = React.useState("Select");
+
   return (
-    <div class="dropdown" data-dropdown>
-      <button class="link" data-dropdown-button>
-        Information
-      </button>
-      <div class="dropdown-menu information-grid">
-        <div>
-          <div class="dropdown-heading">Free Tutorials</div>
-          <div class="dropdown-links">
-            <a href="www" className="link">
-              All
-            </a>
-            <a href="www" className="link">
-              Latest
-            </a>
-            <a href="defe" className="link">
-              Popular
-            </a>
-          </div>
-        </div>
+    <div className="app">
+      <div className="home">
+        <button
+          onMouseEnter={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <span>{select}</span>
+          <i
+            className={
+              isOpen
+                ? "fa fa-solid fa-angle-down"
+                : "fa fa-solid fa-angle-right"
+            }
+          ></i>
+        </button>
       </div>
+      {isOpen && (
+        <div className="dropdown">
+          {props.list.map((item) => (
+            <p
+              key={item}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                setSelect(item);
+              }}
+            >
+              {item}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default Dropdown;
