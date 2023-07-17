@@ -6,6 +6,7 @@ const Dropdown = (props) => {
 
   return (
     <div className="app">
+      <h1>Should you use a dropdown?</h1>
       <div className="home">
         <button
           onMouseEnter={() => {

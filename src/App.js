@@ -1,5 +1,4 @@
 import Dropdown from "./components/Dropdown";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const list = ["Yes", "Probably Not"];
