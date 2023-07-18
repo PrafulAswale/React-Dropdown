@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 Created a simple dropdown component using React.
- [Dropdown Link](https://github.com/facebook/create-react-app).
+ * [Dropdown Link](https://reactdropdownpa.netlify.app/).
 
 ## Available Scripts
 
